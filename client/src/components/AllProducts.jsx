@@ -27,7 +27,7 @@ const AllProducts = () => {
             {
                 productList.map((product, idx)=> {
                     return(
-                    <div key={idx}>
+                    <div key={idx} className="d-flex">
                         <h3><Link to={`/show/${product._id}`}>{product.title}</Link></h3>
                     </div>
                     )

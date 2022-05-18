@@ -9,6 +9,7 @@ import {
   Link 
 } from "react-router-dom";
 import ShowOne from './components/ShowProduct';
+import EditOne from './components/EditProduct';
 function App() {
   return (
     
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route exact path="/show/:id">
           <ShowOne></ShowOne>
+        </Route>
+        <Route exact path="/edit/:id">
+          <EditOne></EditOne>
         </Route>
       </Switch>
     </BrowserRouter>
