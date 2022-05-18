@@ -10,16 +10,18 @@ import {
 } from "react-router-dom";
 import ShowOne from './components/ShowProduct';
 import EditOne from './components/EditProduct';
+import React, {useState} from 'react';
 function App() {
+  const [newProdToggle, setNewProdToggle] = useState(false);
   return (
     
     <div className="App container">
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-        <CreateForm></CreateForm>
+        <CreateForm newProdToggle={newProdToggle}  setNewProdToggle={setNewProdToggle}></CreateForm>
         <hr/>
-        <AllProducts></AllProducts>
+        <AllProducts newProdToggle={newProdToggle}></AllProducts>
         </Route>
         <Route exact path="/show/:id">
           <ShowOne></ShowOne>

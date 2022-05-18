@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 
-const CreateForm = () => {
+const CreateForm = (props) => {
     let [formInfo, setFormInfo] = useState({title:"",price:0,description:""});
     const changeHandler = (e)=> {
         setFormInfo({
@@ -16,6 +16,7 @@ const CreateForm = () => {
             .then(response => {
                 console.log(response);
                 setFormInfo({title:"",price:0,description:""})
+                props.setNewProdToggle(!props.newProdToggle)
             })
             .catch(err => {
                 console.log(err)
